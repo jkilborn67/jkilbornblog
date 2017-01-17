@@ -27,7 +27,9 @@ class ArticlesController < ApplicationController
   
   def create
   #debugger
+  #binding.pry
     @article = Article.new(article_params)
+    @article.user = User.find(1)
     if @article.save
       #render plain: params[:article].inspect
       flash[:success] = "Article was sucessfully created."
