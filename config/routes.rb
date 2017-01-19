@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :articles
 
   get 'signup', to: 'users#new'
+  # automatically adds standard routes for model
   resources :users, except: [:new]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
