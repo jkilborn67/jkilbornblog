@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   resources :articles
 
   get 'signup', to: 'users#new'
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+  
+  
   # automatically adds standard routes for model
   resources :users, except: [:new]
   # Example of regular route:
